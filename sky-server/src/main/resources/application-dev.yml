@@ -11,3 +11,8 @@ sky:
     access-key-id: LTAI5tPVVSpTGdNstt8hyv4Y
     access-key-secret: VkXBxKRoq68o4MzyhRzH7Fa6iYG1XJ
     bucket-name: sky-toke
+  redis:
+    host: localhost
+    port: 6379
+    password: 111111
+    database: 1
