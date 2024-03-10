@@ -52,4 +52,7 @@ public interface DishMapper {
 
     @AutoFill(OperationType.INSERT)
     void update(Dish dish);
+
+    @Select("select * from dish where category_id = #{categoryId}")
+    List<Dish> getByCategoryId(Long categoryId);
 }

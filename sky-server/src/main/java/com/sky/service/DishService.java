@@ -2,6 +2,7 @@ package com.sky.service;
 
 import com.sky.dto.DishDTO;
 import com.sky.dto.DishPageQueryDTO;
+import com.sky.entity.Dish;
 import com.sky.result.PageResult;
 import com.sky.result.Result;
 import com.sky.vo.DishVO;
@@ -35,4 +36,11 @@ public interface DishService {
         根据菜品id修改菜品基本信息和口味信息
      */
     void updateDishWithFlavor(DishDTO dishDTO);
+
+    /*
+        起售或停售菜品
+     */
+    void starOrStop(Long id, Integer status);
+
+    List<Dish> getByCategoryId(Long categoryId);
 }
