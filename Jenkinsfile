@@ -4,7 +4,7 @@ pipeline{
     stages{
       stage('Build'){
         steps{
-            TCABulider(codeAnalysisPath: '/zhuay/CodeAnalysis/', teamId: 'JxAsnpi5EPG', projectName: 'demo', token: '0712b895f30c5e958ec71a7c22e1b1a2ad1d5c6b', branchName: 'master', languageType: 'Java', refSchemeID: '1', scanPlan: 'model', threshold: '90', total:true)
+            step([$class:TCABuilder codeAnalysisPath: '/zhuay/CodeAnalysis/', teamId: 'JxAsnpi5EPG', projectName: 'demo', token: '0712b895f30c5e958ec71a7c22e1b1a2ad1d5c6b', branchName: 'master', languageType: 'Java', refSchemeID: '1', scanPlan: 'model', threshold: '90', total:true])
             script{
                 def tca_status = readFile('tca_threshold.txt')
                 if (tca_status == "success") {
